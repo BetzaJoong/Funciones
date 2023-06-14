@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: rgb(202, 241, 196);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+}
+
+h3 {
+    font-family: 'Gochi Hand', cursive;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(233, 234, 247, 0.5);
+    padding: 0px;
+    color: rgb(37, 35, 35);
+}
+
+
+#div1 {
+    width: 200px;
+    height: 200px;
+    background-color: magenta;
+    align-items: center;
+}
+
+#div2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(170, 170, 237);
+}
+
+#div3 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(253, 242, 87);
+}
+
+/* #div4{
+    width: 200px; 
+    height: 200px; 
+    background-color: rgb(117, 241, 216);
+} */
