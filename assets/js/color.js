@@ -45,15 +45,15 @@ if (letter === 'a') {
 }
 
 // Evento para cambiar el color de fondo al hacer clic en los divs
-document.getElementById('div1').addEventListener('click', function () {
+document.querySelector('#div1').addEventListener('click', function () {
+    this.style.backgroundColor = selectedColor; // cambia el color de fondo del elemento actual al color almacenado en la variable selectedColor.
+});
+
+document.querySelector('#div2').addEventListener('click', function () {
     this.style.backgroundColor = selectedColor;
 });
 
-document.getElementById('div2').addEventListener('click', function () {
-    this.style.backgroundColor = selectedColor;
-});
-
-document.getElementById('div3').addEventListener('click', function () {
+document.querySelector('#div3').addEventListener('click', function () {
     this.style.backgroundColor = selectedColor;
 });
 
