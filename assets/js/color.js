@@ -21,40 +21,34 @@
 
 // _______Solucion______
 
-// Variable global para almacenar la letra y el color seleccionado
-let selectedLetter = '';
+// Variable global para almacenar el color seleccionado
 let selectedColor = '';
 
-// Obtener la selección de la letra mediante prompt
-const letter = prompt("Selecciona la letra que deseas elegir:\na para color rojo,\ns para color azul,\nd para color verde.");
-
-// Asignar el color correspondiente según la letra seleccionada
-if (letter === 'a') {
-    selectedLetter = 'A';
-    selectedColor = 'red';
-} else if (letter === 's') {
-    selectedLetter = 'S';
-    selectedColor = 'blue';
-} else if (letter === 'd') {
-    selectedLetter = 'D';
-    selectedColor = 'green';
-} else {
-    // Si se ingresó una letra no válida, mostrar un mensaje de error y salir del script
-    alert("Letra no válida. Selecciona una letra válida (a, s o d).");
-    throw new Error("Letra no válida.");
-}
+// Función para cambiar el color seleccionado según la tecla presionada
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'a') {
+        selectedColor = 'red';
+    } else if (event.key === 's') {
+        selectedColor = 'blue';
+    } else if (event.key === 'd') {
+        selectedColor = 'green';
+    }
+});
 
 // Evento para cambiar el color de fondo al hacer clic en los divs
-document.querySelector('#div1').addEventListener('click', function () {
-    this.style.backgroundColor = selectedColor; // cambia el color de fondo del elemento actual al color almacenado en la variable selectedColor.
-});
-
-document.querySelector('#div2').addEventListener('click', function () {
+document.getElementById('div1').addEventListener('click', function () {
     this.style.backgroundColor = selectedColor;
 });
 
-document.querySelector('#div3').addEventListener('click', function () {
+document.getElementById('div2').addEventListener('click', function () {
     this.style.backgroundColor = selectedColor;
+});
+
+document.getElementById('div3').addEventListener('click', function () {
+    this.style.backgroundColor = selectedColor;
+});
+    document.getElementById('div4').addEventListener('click', function () {
+        this.style.backgroundColor = selectedColor;
 });
 
 
