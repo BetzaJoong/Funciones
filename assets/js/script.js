@@ -14,27 +14,23 @@ ele.addEventListener("click", pintar);}
 
 // ______Solucion_____
 
-// Color amarillo
+// // Color amarillo
 
-function pintar() {
-    this.style.backgroundColor = 'yellow';
-}
-const ele = document.getElementById("ele1");
-ele.addEventListener("click", pintar);
+// function pintar() {
+//     this.style.backgroundColor = 'yellow';
+// }
+// const ele = document.getElementById("ele1");
+// ele.addEventListener("click", pintar);
 
 
 // Color verde
 
 function pintar(color = 'green') {
-    const ele = document.getElementById("ele1");
     ele.style.backgroundColor = color;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    pintar(); // Establecer el color verde por defecto al cargar la página
-
-    const ele = document.getElementById("ele1");
-    ele.addEventListener("click", function () {
-        pintar('yellow');
-    });
+const ele = document.getElementById("ele1");
+pintar()
+ele.addEventListener("click", function () {
+    pintar('yellow');
 });
