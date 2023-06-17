@@ -5,8 +5,8 @@
 //     return a+b+c
 // }
 
-// Como quedaria
-let example = (a, b, c) => a + b + c; //uso la funcion flecha para la asginacion de mi funcion. 
+// // Como quedaria
+const example = (a, b, c) => a + b + c; //uso la funcion flecha para la asginacion de mi funcion.
 
-let result = example(1, 5, 3);
-console.log(result);  //imprimira el valor de 9
+let result = example(4, 5, 3);
+console.log(result);  //imprimira el valor de 12
