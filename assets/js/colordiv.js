@@ -9,7 +9,6 @@
 // el evento.
 
 // El siguiente script te ayudará a realizar acciones en función de que se presione una tecla
-
 // document.addEventListener('keydown', function (event) {
 // if (event.key === 'a') {
 // /* Cambiar a color 1 */
@@ -19,36 +18,75 @@
 // })
 // -------------------------------------
 
-// _______Solucion______
+// _______Solucion_______
 
-// Variable global para almacenar el color seleccionado
 let selectedColor = '';
+let isMessageShown = false;
 
-// Función para cambiar el color seleccionado según la tecla presionada
+function showMessage(message, color) {
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = message;
+    messageElement.style.color = color;
+}
+
 document.addEventListener('keydown', function (event) {
-    if (event.key === 'a') {
-        selectedColor = 'red';
-    } else if (event.key === 's') {
-        selectedColor = 'blue';
-    } else if (event.key === 'd') {
-        selectedColor = 'green';
+    const lowercaseKey = event.key.toLowerCase();
+    const uppercaseKey = event.key.toUpperCase();
+
+    if (event.getModifierState('CapsLock')) {
+        showMessage('Solo se aceptan letras minúsculas', 'red');
+        isMessageShown = true;
+        return;
+    }
+
+    isMessageShown = false;
+
+    if (lowercaseKey === 'a') {
+        selectedColor = '#dcc6b0';
+        showMessage('Has seleccionado la letra "a" y el color es café', 'green');
+    } else if (lowercaseKey === 's') {
+        selectedColor = '#dbffff';
+        showMessage('Has seleccionado la letra "s" y el color es turqueza', 'green');
+    } else if (lowercaseKey === 'd') {
+        selectedColor = '#fefacc';
+        showMessage('Has seleccionado la letra "d" y el color es beige', 'green');
+    } else {
+        showMessage('No se acepta esa letra, vuelve a intentarlo', 'red');
     }
 });
 
-// Evento para cambiar el color de fondo al hacer clic en los divs
+document.getElementById('resetButton').addEventListener('click', function () {
+    selectedColor = '';
+    document.getElementById('div1').style.backgroundColor = '';
+    document.getElementById('div2').style.backgroundColor = '';
+    document.getElementById('div3').style.backgroundColor = '';
+    document.getElementById('div4').style.backgroundColor = '';
+    showMessage('', 'black');
+});
+
 document.getElementById('div1').addEventListener('click', function () {
-    this.style.backgroundColor = selectedColor;
+    if (!isMessageShown) {
+        this.style.backgroundColor = selectedColor;
+    }
 });
 
 document.getElementById('div2').addEventListener('click', function () {
-    this.style.backgroundColor = selectedColor;
+    if (!isMessageShown) {
+        this.style.backgroundColor = selectedColor;
+    }
 });
 
 document.getElementById('div3').addEventListener('click', function () {
-    this.style.backgroundColor = selectedColor;
-});
-    document.getElementById('div4').addEventListener('click', function () {
+    if (!isMessageShown) {
         this.style.backgroundColor = selectedColor;
+    }
 });
+
+document.getElementById('div4').addEventListener('click', function () {
+    if (!isMessageShown) {
+        this.style.backgroundColor = selectedColor;
+    }
+});
+
 
 

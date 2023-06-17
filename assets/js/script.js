@@ -23,7 +23,7 @@ ele.addEventListener("click", pintar);}
 // ele.addEventListener("click", pintar);
 
 
-// Color verde
+// Color verde y amarillo
 
 function pintar(color = 'green') {
     ele.style.backgroundColor = color;
